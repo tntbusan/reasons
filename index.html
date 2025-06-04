@@ -1,10 +1,7 @@
 <!--
   ────────────────────────────────────────────────
   “네이버 모두 홈페이지 대체 플랫폼 비교” 상세 배너
-  - 1) 요구 사항 및 평가 기준
-  - 2) 검토한 주요 대체 플랫폼
-  - 3) 그 외 다른 대안 간단 언급
-  - 4) 결론: 카페24가 최적 대안인 이유
+  - 각 제목 클릭 시 세부 내용이 아코디언 형식으로 표시됨
 ────────────────────────────────────────────────
 -->
 
@@ -23,10 +20,30 @@
     font-weight: 700;
     text-align: center;
   }
-  .replacement-banner h3 {
-    margin: 20px 0 8px;
+  details {
+    margin-top: 15px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 10px;
+  }
+  summary {
     font-size: 1.2rem;
     font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+  }
+  /* 기본 브라우저 화살표 제거 후 커스텀 */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::before {
+    content: "\25BA"; /* ▶ */
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.2s ease;
+  }
+  details[open] > summary::before {
+    transform: rotate(90deg);
   }
   .replacement-banner p {
     margin: 4px 0;
@@ -35,8 +52,8 @@
   }
   .replacement-banner ul {
     list-style: none;
-    padding: 0;
-    margin: 6px 0 0 16px;
+    padding: 0 0 0 16px;
+    margin: 6px 0 0 0;
   }
   .replacement-banner ul li {
     margin: 6px 0;
@@ -52,7 +69,7 @@
     .replacement-banner h2 {
       font-size: 1.3rem;
     }
-    .replacement-banner h3 {
+    summary {
       font-size: 1.1rem;
     }
     .replacement-banner p,
@@ -65,57 +82,64 @@
 <div class="replacement-banner">
   <h2>📝 네이버 모두 홈페이지 대체 플랫폼 비교 요약</h2>
 
-  <h3>1. 요구 사항 및 평가 기준</h3>
-  <ul>
-    <li><b>네이버 스마트스토어 연동</b> 기능: 상품·재고·주문 자동 동기화</li>
-    <li>초기 구축 비용 및 운영 편의성: 코딩 경험이 적어도 가능하고, 저렴한 요금제</li>
-    <li>디자인 커스터마이징 자유도: 드래그앤드롭 + HTML/CSS/JS 수정 가능</li>
-    <li>쇼핑몰 기본 기능 지원: 결제·배송·쿠폰 등 내장 여부</li>
-    <li>운영 안정성 및 한국어 고객지원: 국내 서버 인프라, 24시간 지원</li>
-  </ul>
+  <details>
+    <summary>1. 요구 사항 및 평가 기준</summary>
+    <ul>
+      <li><b>네이버 스마트스토어 연동</b> 기능: 상품·재고·주문 자동 동기화</li>
+      <li>초기 구축 비용 및 운영 편의성: 코딩 경험이 적어도 가능하고, 저렴한 요금제</li>
+      <li>디자인 커스터마이징 자유도: 드래그앤드롭 + HTML/CSS/JS 수정 가능</li>
+      <li>쇼핑몰 기본 기능 지원: 결제·배송·쿠폰 등 내장 여부</li>
+      <li>운영 안정성 및 한국어 고객지원: 국내 서버 인프라, 24시간 지원</li>
+    </ul>
+  </details>
 
-  <h3>2. 검토한 주요 대체 플랫폼</h3>
+  <details>
+    <summary>2. 검토한 주요 대체 플랫폼</summary>
+    <p><b>•네이버 모두</b></p>
+    <ul>
+      <li>장점: 완전 무료, 간편한 반응형 에디터</li>
+      <li>단점: 스마트스토어 연동 불가, 쇼핑몰 기능 제한적</li>
+    </ul>
 
-  <p><b>•네이버 모두</b></p>
-  <ul>
-    <li>장점: 완전 무료, 간편한 반응형 에디터</li>
-    <li>단점: 스마트스토어 연동 불가, 쇼핑몰 기능 제한적</li>
-  </ul>
+    <p><b>•카페24</b></p>
+    <ul>
+      <li>스마트스토어 연동: 상품 가져오기/보내기, 재고·가격 자동 동기화, 주문 연동</li>
+      <li>호스팅: 무료 호스팅 + 유료 쇼핑몰 패키지(월 15,000원~30,000원)</li>
+      <li>디자인: 관리자 에디터 + HTML/CSS 편집, 반응형 스킨 제공</li>
+      <li>쇼핑몰 기능: PG 모듈, 쿠폰·적립금, SMS, 통계 등 기본 제공</li>
+      <li>고객지원: 24시간 한국어 지원, 안정적 인프라</li>
+    </ul>
 
-  <p><b>•카페24</b></p>
-  <ul>
-    <li>스마트스토어 연동: 상품 가져오기/보내기, 재고·가격 자동 동기화, 주문 연동</li>
-    <li>호스팅: 무료 호스팅 + 유료 쇼핑몰 패키지(월 15,000원~30,000원)</li>
-    <li>디자인: 관리자 에디터 + HTML/CSS 편집, 반응형 스킨 제공</li>
-    <li>쇼핑몰 기능: PG 모듈, 쿠폰·적립금, SMS, 통계 등 기본 제공</li>
-    <li>고객지원: 24시간 한국어 지원, 안정적 인프라</li>
-  </ul>
+    <p><b>•아임웹</b></p>
+    <ul>
+      <li>장점: 직관적 드래그앤드롭, 자체 쇼핑몰 기능 내장</li>
+      <li>단점: 스마트스토어 연동 불가, 상품 이중 관리 필요</li>
+    </ul>
 
-  <p><b>•아임웹</b></p>
-  <ul>
-    <li>장점: 직관적 드래그앤드롭, 자체 쇼핑몰 기능 내장</li>
-    <li>단점: 스마트스토어 연동 불가, 상품 이중 관리 필요</li>
-  </ul>
+    <p><b>•위홈</b></p>
+    <ul>
+      <li>장점: 간편한 템플릿 기반 사이트 제작, 모바일 최적화</li>
+      <li>단점: 쇼핑몰 기능 없음, 스마트스토어 연동 불가</li>
+    </ul>
+  </details>
 
-  <p><b>•위홈</b></p>
-  <ul>
-    <li>장점: 간편한 템플릿 기반 사이트 제작, 모바일 최적화</li>
-    <li>단점: 쇼핑몰 기능 없음, 스마트스토어 연동 불가</li>
-  </ul>
+  <details>
+    <summary>3. “그 외 다른 대안” 간단 언급</summary>
+    <ul>
+      <li><b>Wix, Squarespace, Weebly 등 해외 웹빌더</b>: 스마트스토어 연동 불가, 한국어·PG 연동 제한</li>
+      <li><b>GitHub Pages + 정적 사이트 생성기(Jekyll/Hugo)</b>: 순수 정적 호스팅, 서버 사이드 연동 불가</li>
+      <li><b>자체 서버 + 스마트스토어 Open API</b>: 직접 API 연동 가능하나 개발·유지보수 부담 큼</li>
+    </ul>
+  </details>
 
-  <h3>3. “그 외 다른 대안” 간단 언급</h3>
-  <ul>
-    <li><b>Wix, Squarespace, Weebly 등 해외 웹빌더</b>: 스마트스토어 연동 불가, 한국어·PG 연동 제한</li>
-    <li><b>GitHub Pages + 정적 사이트 생성기(Jekyll/Hugo)</b>: 순수 정적 호스팅, 서버 사이드 연동 불가</li>
-    <li><b>자체 서버 + 스마트스토어 Open API</b>: 직접 API 연동 가능하나 개발·유지보수 부담 큼</li>
-  </ul>
-
-  <h3>4. 결론: 카페24가 최적 대안인 이유</h3>
-  <ul>
-    <li>스마트스토어 연동 모듈 제공으로 <b>상품·재고·주문 자동 동기화</b> 가능</li>
-    <li>월 15,000원~30,000원 쇼핑몰 패키지로 <b>결제·배송·쿠폰·SMS</b> 등 기본 기능 모두 지원</li>
-    <li>관리자 UI와 HTML/CSS 편집으로 <b>디자인 커스터마이징 자유도</b> 보장</li>
-    <li>24시간 한국어 고객지원 및 <b>안정적 국내 서버 인프라</b> 제공</li>
-    <li>“네이버 모두” 대비 운영 효율 극대화 가능 → <b>카페24</b>를 강력 추천</li>
-  </ul>
+  <details>
+    <summary>4. 결론: 카페24가 최적 대안인 이유</summary>
+    <ul>
+      <li>스마트스토어 연동 모듈 제공으로 <b>상품·재고·주문 자동 동기화</b> 가능</li>
+      <li>월 15,000원~30,000원 쇼핑몰 패키지로 <b>결제·배송·쿠폰·SMS</b> 등 기본 기능 모두 지원</li>
+      <li>관리자 UI와 HTML/CSS 편집으로 <b>디자인 커스터마이징 자유도</b> 보장</li>
+      <li>24시간 한국어 고객지원 및 <b>안정적 국내 서버 인프라</b> 제공</li>
+      <li>“네이버 모두” 대비 운영 효율 극대화 가능 → <b>카페24</b>를 강력 추천</li>
+    </ul>
+  </details>
 </div>
